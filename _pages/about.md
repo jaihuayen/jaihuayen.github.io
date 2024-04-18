@@ -2,16 +2,16 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle:
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: true # crops the image to make it circular
+  image_circular: false # crops the image to make it circular
   more_info:
 
 news: true # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
@@ -21,14 +21,14 @@ Currently, I serve as an Senior AI Software Engineer at [QNAP](https://www.qnap.
 
 In my previous role as an AI Algorithm Engineer at [TutorABC](https://www.tutorabc.com/site/en_us), I specialized in data analysis of customer and product data. I applied natural language processing and computer vision techniques to analyze consumer responses, company products, and services. The goal was to enhance user experience and boost company revenue. Furthermore, I played a key role in implementing Docker, Airflow ETL processes, and CI/CD processes to establish MLOps within the AI team.
 
-Interview by the NTU Student Console
-=====
+### Interview by the NTU Student Console
+
 ![Interview](/assets/img/invited.png)
 
 Link to the whole article. [Link](https://jaihuayen.github.io/homeweb/files/NTU_Student_Console.pdf)
 
-Shown on the NTU Highlight
-=====
+### Shown on the NTU Highlight
+
 ![Highlight](/assets/img/excellent_TA.png)
 
 Link to the whole article. Page 15 in [Link](https://jaihuayen.github.io/homeweb/files/NTU_Highlights.pdf).
