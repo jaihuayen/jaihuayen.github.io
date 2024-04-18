@@ -7,19 +7,28 @@ subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+  image_circular: true # crops the image to make it circular
+  more_info:
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Hi I am Jaihua! You can call me Kevin if you are not used to speak Chinese name.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+Currently, I serve as an Senior AI Software Engineer at [QNAP](https://www.qnap.com/en), where my primary focus lies in training computer vision models for tasks like image classification and OCR. My responsibilities extend to deploying these models on edge AI runtimes. Additionally, I contribute to the optimization and deployment of zero-shot language-image models like MCLIP in [QuMagie](https://www.qnap.com/en-us/software/qumagie) and [QSirch](https://www.qnap.com/en-us/software/qsirch).
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+In my previous role as an AI Algorithm Engineer at [TutorABC](https://www.tutorabc.com/site/en_us), I specialized in data analysis of customer and product data. I applied natural language processing and computer vision techniques to analyze consumer responses, company products, and services. The goal was to enhance user experience and boost company revenue. Furthermore, I played a key role in implementing Docker, Airflow ETL processes, and CI/CD processes to establish MLOps within the AI team.
+
+Interview by the NTU Student Console
+=====
+![Interview](/assets/img/invited.png)
+
+Link to the whole article. [Link](https://jaihuayen.github.io/homeweb/files/NTU_Student_Console.pdf)
+
+Shown on the NTU Highlight
+=====
+![Highlight](/assets/img/excellent_TA.png)
+
+Link to the whole article. Page 15 in [Link](https://jaihuayen.github.io/homeweb/files/NTU_Highlights.pdf).
