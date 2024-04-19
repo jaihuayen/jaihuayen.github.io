@@ -15,7 +15,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi I am Jaihua! You can call me Kevin if you are not used to speak Chinese name.
+Hi I am Jaihua! You can call me Kevin if you are not used to pronounce my Chinese name.
 
 Currently, I serve as an Senior AI Software Engineer at [QNAP](https://www.qnap.com/en), where my primary focus lies in training computer vision models for tasks like image classification and OCR. My responsibilities extend to deploying these models on edge AI runtimes. Additionally, I contribute to the optimization and deployment of zero-shot language-image models like MCLIP in [QuMagie](https://www.qnap.com/en-us/software/qumagie) and [QSirch](https://www.qnap.com/en-us/software/qsirch).
 
