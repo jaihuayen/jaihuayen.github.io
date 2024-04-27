@@ -10,6 +10,9 @@ nav_order: 6
 ## Teaching Assistant
 
 Fall 2018:   Statistics
+
 Spring 2018: Applied Linear Algebra
+
 Spring 2018: Statistics II
+
 Fall 2017:   Statistics I
