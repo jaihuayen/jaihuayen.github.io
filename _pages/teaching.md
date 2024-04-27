@@ -7,6 +7,9 @@ nav: true
 nav_order: 6
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+## Teaching Assistant
 
-Organize your courses by years, topics, or universities, however you like!
+Fall 2018:   Statistics
+Spring 2018: Applied Linear Algebra
+Spring 2018: Statistics II
+Fall 2017:   Statistics I
