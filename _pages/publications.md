@@ -7,9 +7,4 @@ nav: true
 nav_order: 2
 ---
 
-<!-- _pages/publications.md -->
-<div class="publications">
-
-{% bibliography %}
-
-</div>
+- Yen, J.-H., Chiu, C.-H. (2020). Richness estimation with species identity error. Proceedings 62th International Statistical Institute (ISI) World Statistics Congress, Volume 6, 401-408.
