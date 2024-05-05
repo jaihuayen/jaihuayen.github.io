@@ -19,6 +19,7 @@ Hi I am Jaihua! You can call me Kevin if you are not used to pronounce my Chines
 
 <font color="#f00"> I am an incoming Biostatistics Ph.D. student at University at Buffalo on Fall 2024! </font>
 
+
 Currently, I serve as an Senior AI Software Engineer at [QNAP](https://www.qnap.com/en), where my primary focus lies in training computer vision models for such as image classification and Optical Character Recognition (OCR). Additionally, I contribute to deploy zero-shot language-image models like CLIP on our services. My responsibilities extend to deploying these models on edge AI runtimes.
 
 ### Shown on the NTU Highlight
