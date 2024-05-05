@@ -31,6 +31,8 @@ Currently, I serve as an Senior AI Software Engineer at [QNAP](https://www.qnap.
 
 Link to to the whole article. Page 15 in [Link](/assets/pdf/NTU_Highlights.pdf)
 
+<p></p>
+
 ### Interview by the NTU Student Console
 
 <div style="text-align: center;">
@@ -39,3 +41,4 @@ Link to to the whole article. Page 15 in [Link](/assets/pdf/NTU_Highlights.pdf)
 
 Link to the whole article. [Link](/assets/pdf/NTU_Student_Console.pdf)
 
+<p></p>
