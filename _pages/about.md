@@ -28,6 +28,7 @@ Currently, I serve as an Senior AI Software Engineer at [QNAP](https://www.qnap.
 <img src="/assets/img/excellent_TA.png" alt="isolated" width="500"/>
 </div>
 
+<p></p>
 
 Link to to the whole article. Page 15 in [Link](/assets/pdf/NTU_Highlights.pdf)
 
@@ -38,6 +39,8 @@ Link to to the whole article. Page 15 in [Link](/assets/pdf/NTU_Highlights.pdf)
 <div style="text-align: center;">
 <img src="/assets/img/invited.png" alt="isolated" width="500"/>
 </div>
+
+<p></p>
 
 Link to the whole article. [Link](/assets/pdf/NTU_Student_Console.pdf)
 
