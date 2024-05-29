@@ -4,7 +4,7 @@ permalink: /cv/
 title: cv
 nav: true
 nav_order: 5
-cv_pdf: JHY_CV.pdf
+cv_pdf: JaihuaKYen_CV.pdf
 description:
 toc:
   sidebar: left
