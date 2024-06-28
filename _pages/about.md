@@ -15,12 +15,12 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi I am Jaihua! You can call me Kevin if you are not used to pronounce my Chinese name.
+Hi I am Jaihua! Welcome to my page!
 
 <font color="#f00"> I am an incoming Biostatistics Ph.D. student at University at Buffalo on Fall 2024! </font>
 <p></p>
 
-Currently, I serve as an Senior AI Software Engineer at [QNAP](https://www.qnap.com/en), where my primary focus lies in training computer vision models for such as image classification and Optical Character Recognition (OCR). Additionally, I contribute to deploy zero-shot language-image models like CLIP on our services. My responsibilities extend to deploying these models on edge AI runtimes.
+I served as an Senior AI Software Engineer at [QNAP](https://www.qnap.com/en), where my primary focus lies in training computer vision models for such as image classification and Optical Character Recognition (OCR). Additionally, I contributed to deploy zero-shot language-image models like CLIP on our services. My responsibilities extend to deploying these models on edge AI runtimes.
 
 ### Shown on the NTU Highlight
 
@@ -31,6 +31,16 @@ Currently, I serve as an Senior AI Software Engineer at [QNAP](https://www.qnap.
 <p></p>
 
 Link to to the whole article. Page 15 in [Link](/assets/pdf/NTU_Highlights.pdf)
+
+### Shown on the NTU Speech YouTube Channel
+
+<div style="text-align: center;">
+<img src="/assets/img/ntu_ta_session.png" alt="isolated" width="500"/>
+</div>
+
+<p></p>
+
+Link to the Teaching Assistant Conference YouTube record. [Link](https://youtu.be/LlKg47qWXLI?si=Jzg9tWXpgYYuZT13)
 
 <p></p>
 
