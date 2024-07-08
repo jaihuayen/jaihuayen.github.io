@@ -15,7 +15,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi I am Jaihua! Welcome to my page!
+Hi I am Jai-Hua! Welcome to my page!
 
 <font color="#f00"> I am an incoming Biostatistics Ph.D. student at University at Buffalo on Fall 2024! </font>
 <p></p>
