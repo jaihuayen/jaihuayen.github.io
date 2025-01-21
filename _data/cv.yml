@@ -21,7 +21,22 @@
       institution: National Tsing Hua University, Hsinchu, Taiwan
       year: 2013 - 2017
 
-- title: Experience
+- title: Academic Experience
+  type: time_table
+  contents:
+    - title: Teaching Assistant
+      institution: University at Buffalo, New York, USA
+      year: 2024.08 - Now
+
+    - title: Teaching Assistant
+      institution: National Taiwan University, Taipei, Taiwan
+      year: 2017.09 - 2019.01
+
+    - title: Research Assistant
+      institution: National Taiwan University, Taipei, Taiwan
+      year: 2017.08 - 2019.08
+
+- title: Industry Experience
   type: time_table
   contents:
     - title: Senior AI Software Engineer
