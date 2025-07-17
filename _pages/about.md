@@ -15,7 +15,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Hi I am Jai-Hua (Chinese Name: 嘉華)! You can also called me Kevin. Welcome to my page!
+Hi I am Jai-Hua! You can also called me Kevin. Welcome to my page!
 
 I am currently a first year Biostatistics Ph.D. student at University at Buffalo.
 
