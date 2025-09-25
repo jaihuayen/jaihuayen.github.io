@@ -2,23 +2,11 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: 
+description: Materials for courses you taught. Replace this text with your description.
 nav: true
 nav_order: 6
 ---
 
-## Teaching Assistant (University at Buffalo)
+For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
 
-Spring 2025: STA 527 Statistical Analysis I
-
-Fall 2024:   STA 119 Statistical Methods
-
-## Teaching Assistant (National Taiwan University)
-
-Fall 2018:   Agron2002 Statistics
-
-Spring 2018: Agron4023 Applied Linear Algebra
-
-Spring 2018: MGT2002 Statistics II
-
-Fall 2017:   MGT2001 Statistics I
+Organize your courses by years, topics, or universities, however you like!
