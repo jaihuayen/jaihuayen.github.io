@@ -26,7 +26,7 @@ latest_posts:
 
 Hi I am Jai-Hua! You can also called me Kevin. Welcome to my page!
 
-I am currently a second year Biostatistics Ph.D. student at University at Buffalo.
+I am currently a second year Biostatistics Ph.D. student at University at Buffalo working with Dr. Douglas Landsittel.
 
 I served as an Senior AI Software Engineer at [QNAP](https://www.qnap.com/en), where my primary focus lies in training computer vision models for such as image classification and Optical Character Recognition (OCR). Additionally, I contributed to deploy zero-shot language-image models like CLIP on our services. My responsibilities extend to deploying these models on edge AI runtimes.
 
