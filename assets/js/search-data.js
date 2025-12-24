@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-machine-learning-and-language-modeling",
+        },{id: "post-causal-inference-notes",
+        
+          title: "Causal Inference Notes",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/tables/";
+          
+        },
+      },{id: "post-machine-learning-and-language-modeling",
         
           title: "Machine Learning and Language Modeling",
         
