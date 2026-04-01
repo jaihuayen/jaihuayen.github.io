@@ -58,7 +58,7 @@
   type: nested_list
   contents:
     - title: Multimodal Machine Learning
-    - title: Noise-Labeled Statistical Modeling
+    - title: Explainable Machine Learning
     - title: Causal Inference
 
 - title: Other Interests
