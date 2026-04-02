@@ -57,11 +57,7 @@
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Multimodal Machine Learning
+    - title: Statistical Machine Learning
+    - title: Computer Vision
     - title: Explainable Machine Learning
     - title: Causal Inference
-
-- title: Other Interests
-  type: list
-  contents:
-    - Karate

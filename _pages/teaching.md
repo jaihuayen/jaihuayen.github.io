@@ -9,6 +9,10 @@ nav_order: 6
 
 ## Teaching Assistant (University at Buffalo)
 
+Spring 2026: STA 119 Statistical Methods
+
+Fall 2025: STA 119 Statistical Methods
+
 Spring 2025: STA 527 Statistical Analysis I
 
 Fall 2024:   STA 119 Statistical Methods
