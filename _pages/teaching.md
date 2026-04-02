@@ -2,27 +2,14 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description:
+description: Course materials, schedules, and resources for classes taught.
 nav: true
 nav_order: 6
+calendar: true
 ---
 
-## Teaching Assistant (University at Buffalo)
+This page displays a collection of courses with detailed schedules, materials, and resources. You can organize your courses by years, terms, or topics.
 
-Spring 2026: STA 119 Statistical Methods
+{% include calendar.liquid calendar_id='test@gmail.com' timezone='Asia/Shanghai' %}
 
-Fall 2025: STA 119 Statistical Methods
-
-Spring 2025: STA 527 Statistical Analysis I
-
-Fall 2024:   STA 119 Statistical Methods
-
-## Teaching Assistant (National Taiwan University)
-
-Fall 2018:   Agron2002 Statistics
-
-Spring 2018: Agron4023 Applied Linear Algebra
-
-Spring 2018: MGT2002 Statistics II
-
-Fall 2017:   MGT2001 Statistics I
+{% include courses.liquid %}
