@@ -7,6 +7,12 @@ nav: true
 nav_order: 6
 ---
 
+## Lecturer
+
+Lecturer of Teaching Assistant Conference at Taipei Medical University, Taiwan, February 26, 2019
+
+Lecturer of Teaching Assistant Conference at National Taiwan University, Taiwan, February 15, 2019
+
 ## Teaching Assistant (University at Buffalo)
 
 Spring 2026: STA 119 Statistical Methods
