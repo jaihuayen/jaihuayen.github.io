@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-causal-inference-notes",
+        },{id: "post-winbugs-tutorial",
+        
+          title: "WinBUGS Tutorial",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/tables/";
+          
+        },
+      },{id: "post-causal-inference-notes",
         
           title: "Causal Inference Notes",
         

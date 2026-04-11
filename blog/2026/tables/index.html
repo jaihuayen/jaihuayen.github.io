@@ -1,0 +1,297 @@
+<!DOCTYPE html> <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> WinBUGS Tutorial | Jai-Hua (Kevin) Yen </title> <meta name="author" content="Jai-Hua (Kevin) Yen"> <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design. "> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5"> <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/ub_logo.png?02c8d33832ed708eb95ca9bdc2dc5524"> <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://jaihuayen.github.io/blog/2026/tables/"> <script src="/assets/js/theme.js?a81d82887dd692e91686b43de4542f18"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css" integrity="sha256-q9ba7o845pMPFU+zcAll8rv+gC+fSovKsOoNQ6cynuQ=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.min.css" integrity="sha256-Oppd74ucMR5a5Dq96FxjEzGF7tTw2fZ/6ksAqDCM8GY=" crossorigin="anonymous" media="screen and (prefers-color-scheme: light)"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github-dark.min.css" integrity="sha256-nyCNAiECsdDHrr/s2OQsp5l9XeY2ZJ0rMepjCT2AkBk=" crossorigin="anonymous" media="screen and (prefers-color-scheme: dark)"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.47/bundles/css/diff2html.min.css" integrity="sha256-IMBK4VNZp0ivwefSn51bswdsrhk0HoMTLc2GqFHFBXg=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css"> <script src="/assets/js/distillpub/template.v2.js"></script> <script src="/assets/js/distillpub/transforms.v2.js"></script> <style type="text/css">.fake-img{background:#bbb;border:1px solid rgba(0,0,0,0.1);box-shadow:0 0 4px rgba(0,0,0,0.1);margin-bottom:12px}.fake-img p{font-family:monospace;color:white;text-align:left;margin:12px 0;text-align:center;font-size:16px}</style> </head> <body> <d-front-matter> <script async type="text/json">
+      {
+            "title": "WinBUGS Tutorial",
+            "description": "",
+            "published": "April 11, 2026",
+            "authors": [
+              
+              {
+                "author": "Jai-Hua Kevin Yen",
+                "authorURL": "",
+                "affiliations": [
+                  {
+                    "name": "University at Buffalo",
+                    "url": ""
+                  }
+                ]
+              }
+              
+            ],
+            "katex": {
+              "delimiters": [
+                {
+                  "left": "$",
+                  "right": "$",
+                  "display": false
+                },
+                {
+                  "left": "$$",
+                  "right": "$$",
+                  "display": true
+                }
+              ]
+            }
+          }
+    </script> </d-front-matter> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Jai-Hua (Kevin)</span> Yen </a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">cv </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/">teaching </a> </li> <li class="nav-item"> <button id="search-toggle" title="Search" onclick="openSearchModal()"> <span class="nav-link">ctrl k <i class="ti ti-search"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="post distill"> <d-title> <h1>WinBUGS Tutorial</h1> <p></p> </d-title> <d-byline></d-byline> <d-article> <h1 id="winbugs">WinBUGs</h1> <p>WinBUGS (Windows version of Bayesian inference Using Gibbs Sampling) is a foundational tool in Bayesian statistics. While newer engines like JAGS or Stan are common now, WinBUGS remains a “gold standard” for learning because its GUI and “DoodleBUGS” help visualize how parameters interact.</p> <h2 id="notes">Notes</h2> <p><strong>Windows Installation:</strong> Installing WinBUGS on a Windows OS is straightforward and requires no additional configuration.</p> <p><strong>macOS Installation:</strong> Recent Mac models (M2/M3 chips) operate exclusively on 64-bit architecture, which is incompatible with the 32-bit requirements of WinBUGS. To bypass this, UB students, faculty, and staff are encouraged to use the <a href="https://ubvdi.buffalo.edu/portal/webclient/index.html" rel="external nofollow noopener" target="_blank">UB Virtual Public Site</a>. This service provides a virtual Windows environment where WinBUGS can be accessed and run easily. Alternatively, users may consider installing JAGS, a cross-platform equivalent that natively supports Windows, macOS, and Linux.</p> <h2 id="install">Install</h2> <ol> <li>Download zip file using via this <a href="https://drive.google.com/file/d/1kFmZi4on_EiOreo4WL00Q6K_c8suzkiB/view?usp=drive_link" rel="external nofollow noopener" target="_blank">link</a>.</li> <li>Extract the zip file and open the Application named <code class="language-plaintext highlighter-rouge">WinBUGS</code> </li> </ol> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/winbugs/01-480.webp 480w,/assets/img/winbugs/01-800.webp 800w,/assets/img/winbugs/01-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/winbugs/01.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <h2 id="example">Example</h2> <p>Scenario: The “Eight Schools” example. We want to estimate the effect of coaching in 8 different schools, assuming schools are similar but not identical (they “borrow strength” from each other).</p> <p>In a hierarchical model, we assume that the parameters of interest are not fixed, but are instead drawn from a common “population” distribution. We structure this in three levels:</p> <p>Level 1: The Likelihood (Data Level) Each school $j$ has an observed effect $y_j$ with a known standard error $\sigma_j$:</p> \[y_j \mid \theta_j \sim N(\theta_j, \sigma_j^2), \quad j = 1, \dots, 8\] <p>Level 2: The Population (Structural Level) We assume the true effects $\theta_j$ are not independent. They are “linked” by a shared distribution:</p> \[\theta_j \mid \mu, \tau \sim N(\mu, \tau^2)\] <p>$\mu$: The “grand mean” (the average coaching effect across all schools). $\tau$: The “between-school” variability.</p> <p>Level 3: The Hyper-priors Since we are Bayesian, we must place priors on the parameters of our population distribution:</p> \[\mu \sim \text{Non-informative Prior (e.g., } N(0, 10^6))\] \[\tau \sim \text{Weakly Informative Prior (e.g., } \text{Half-Cauchy or } \Gamma(0.001, 0.001))\] <p>Note:</p> <ul> <li>Stochastic Nodes (~): These represent uncertainty. They MUST be initialized. This includes your parameters and your data (though data is initialized by the “Load Data” step).</li> <li>Logical Nodes (&lt;-): These are deterministic links. They are calculated automatically from other nodes, so you NEVER provide initial values for them.</li> </ul> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>model {
+    for (j in 1:J) {
+        # Likelihood for each school
+        y[j] ~ dnorm(theta[j], tau.y[j])
+        
+        # School-specific effects drawn from a "Population" distribution
+        theta[j] ~ dnorm(mu.theta, tau.theta)
+        
+        # Standard error for each school is usually known data
+        tau.y[j] &lt;- 1 / (sigma.y[j] * sigma.y[j])
+    }
+
+    # Hyper-priors (The "Global" parameters)
+    mu.theta ~ dnorm(0, 0.0001)
+    tau.theta ~ dgamma(0.01, 0.01)
+    
+    # Global Standard Deviation
+    sd.theta &lt;- 1 / sqrt(tau.theta)
+}
+
+# DATA
+list(J = 8, 
+     y = c(28.39, 7.94, -2.75, 6.82, -0.64, 0.63, 18.01, 12.16), 
+     sigma.y = c(14.9, 10.2, 16.3, 11.0, 9.4, 11.4, 10.4, 17.6))
+
+# INITS
+list(mu.theta = 0, tau.theta = 1, theta = c(0,0,0,0,0,0,0,0))
+</code></pre></div></div> <ol> <li>Use <code class="language-plaintext highlighter-rouge">File &gt; New</code> to open a new document</li> <li>Copy the code above inside the workspace</li> <li>Click <code class="language-plaintext highlighter-rouge">Model &gt; Specification</code> </li> </ol> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/winbugs/02-480.webp 480w,/assets/img/winbugs/02-800.webp 800w,/assets/img/winbugs/02-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/winbugs/02.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <ol> <li>Check Model: Highlight the word model in your code and click “Check Model.” The status bar (bottom left) should say “model is syntactically correct.”</li> </ol> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/winbugs/03-480.webp 480w,/assets/img/winbugs/03-800.webp 800w,/assets/img/winbugs/03-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/winbugs/03.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <ol> <li>Load Data: Highlight the word list in your data block and click “Load Data.”</li> </ol> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/winbugs/04-480.webp 480w,/assets/img/winbugs/04-800.webp 800w,/assets/img/winbugs/04-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/winbugs/04.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <ol> <li>Compile: Click “Compile.” This builds the internal mathematical graph.</li> <li>Load Inits: Highlight the list in your initial values block and click “Load Inits.” If you’re lazy, you can click “Gen Inits,” but providing your own is safer for complex models.</li> </ol> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/winbugs/05-480.webp 480w,/assets/img/winbugs/05-800.webp 800w,/assets/img/winbugs/05-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/winbugs/05.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <p>To view trace plots for an array of variables like $\theta_j$ (the individual effects for your 8 schools):</p> <ol> <li>Open <code class="language-plaintext highlighter-rouge">Inference &gt; Samples</code> </li> </ol> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/winbugs/06-480.webp 480w,/assets/img/winbugs/06-800.webp 800w,/assets/img/winbugs/06-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/winbugs/06.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <ol> <li>In the node field, type simply <code class="language-plaintext highlighter-rouge">theta</code> </li> </ol> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/winbugs/07-480.webp 480w,/assets/img/winbugs/07-800.webp 800w,/assets/img/winbugs/07-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/winbugs/07.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <ol> <li>Click Set. This tells WinBUGS to start recording the values for every index of that array.</li> <li>Open <code class="language-plaintext highlighter-rouge">Model &gt; Update</code>. Run <code class="language-plaintext highlighter-rouge">update</code> (e.g., 1,000 or 10,000 iterations).</li> </ol> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/winbugs/08-480.webp 480w,/assets/img/winbugs/08-800.webp 800w,/assets/img/winbugs/08-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/winbugs/08.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <ol> <li>Go back to the Sample Monitor Tool, type theta in the node field again, and click <code class="language-plaintext highlighter-rouge">History</code> to view a graphics window showing the sample trace or <code class="language-plaintext highlighter-rouge">stats</code> to view the summary statistics for the variable, pooling over the chains selected.</li> </ol> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/winbugs/09-480.webp 480w,/assets/img/winbugs/09-800.webp 800w,/assets/img/winbugs/09-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/winbugs/09.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <h2 id="doodlebugs">DoodleBUGS</h2> <p>DoodleBUGS is essentially a “drag-and-drop” editor for building Directed Acyclic Graphs (DAGs). For your presentation, demonstrating how a visual graph translates into statistical code is a powerful way to show you understand the hierarchy.</p> <h3 id="opening-the-workspace">Opening the Workspace</h3> <ol> <li>Go to Model &gt; Doodle. A blank white window will appear.</li> </ol> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/winbugs/10-480.webp 480w,/assets/img/winbugs/10-800.webp 800w,/assets/img/winbugs/10-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/winbugs/10.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <ol> <li>Your cursor is now a “tool.” Notice the toolbar at the top of the Doodle window: <ul> <li>Oval: Stochastic Node ($\sim$)</li> <li>Rectangle: Logical Node ($\leftarrow$)</li> <li>Plate (Stacked Rectangles): For loops (the $j$ index)</li> <li>Arrow: Dependencies</li> </ul> </li> </ol> <h3 id="building-the-hierarchy-step-by-step">Building the Hierarchy Step-by-Step</h3> <ul> <li>Step A: The “School” Plate: Since you have 8 schools, you need a Plate to represent the loop <code class="language-plaintext highlighter-rouge">for (j in 1:J)</code>. <ul> <li>Click the Plate tool (<code class="language-plaintext highlighter-rouge">ctrl</code> + click an empty region) and draw a large box in the middle of the screen.</li> <li>Double-click the edge of the plate. Name it <code class="language-plaintext highlighter-rouge">j</code> and set the range from <code class="language-plaintext highlighter-rouge">1</code> to <code class="language-plaintext highlighter-rouge">8</code>.</li> </ul> </li> <li>Step B: The Individual Effects ($\theta_j$) <ul> <li>Select the Oval tool (Stochastic).</li> <li>Click inside the plate to create a node. Double-click it and name it <code class="language-plaintext highlighter-rouge">theta</code>.</li> <li>Because it’s inside the plate, WinBUGS automatically knows it is an array: <code class="language-plaintext highlighter-rouge">theta[j]</code>.</li> </ul> </li> <li>Step C: The Observed Data ($y_j$) <ul> <li>Create another Oval inside the plate. Name it <code class="language-plaintext highlighter-rouge">y</code>.</li> <li>Use the Arrow tool to draw a line from <code class="language-plaintext highlighter-rouge">theta</code> to <code class="language-plaintext highlighter-rouge">y</code> (Select <code class="language-plaintext highlighter-rouge">y</code> then <code class="language-plaintext highlighter-rouge">ctrl</code> + click <code class="language-plaintext highlighter-rouge">theta</code>). This tells the model that $y$ depends on $\theta$.</li> </ul> </li> <li>Step D: The Hyper-Parameters ($\mu$ and $\tau$): These parameters are shared by all schools, so they must live outside the plate. <ul> <li>Create two Ovals outside the plate. Name them <code class="language-plaintext highlighter-rouge">mu.theta</code> and <code class="language-plaintext highlighter-rouge">tau.theta</code>.</li> <li>Draw arrows from both <code class="language-plaintext highlighter-rouge">mu.theta</code> and <code class="language-plaintext highlighter-rouge">tau.theta</code> into the theta node inside the plate.</li> </ul> </li> </ul> <h3 id="defining-the-distributions">Defining the Distributions</h3> <p>Once the “skeleton” is drawn, you must define the math. Double-click each node: - For $y$: Set the density to <code class="language-plaintext highlighter-rouge">dnorm</code>. In the parameters, link it to <code class="language-plaintext highlighter-rouge">theta</code> and its own precision (or a constant if $\sigma$ is known). - For $\theta$: Set the density to <code class="language-plaintext highlighter-rouge">dnorm</code>. Link the mean to <code class="language-plaintext highlighter-rouge">mu.theta</code> and the precision to <code class="language-plaintext highlighter-rouge">tau.theta</code>. - For $\mu$ and $\tau$: Set these as your priors (e.g., dnorm(0, 0.001)).</p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/winbugs/11-480.webp 480w,/assets/img/winbugs/11-800.webp 800w,/assets/img/winbugs/11-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/winbugs/11.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <h3 id="write-code">Write Code</h3> <p>Once your Doodle is finished, go to the Doodle menu at the top of the screen. Click <code class="language-plaintext highlighter-rouge">Write Code</code>. WinBUGS will instantly open a new text window with the exact BUGS code we used in the above example.</p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/winbugs/12-480.webp 480w,/assets/img/winbugs/12-800.webp 800w,/assets/img/winbugs/12-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/winbugs/12.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <h1 id="r2winbugs">R2WinBUGS</h1> <ol> <li>Install <code class="language-plaintext highlighter-rouge">R2WinBUGS</code> Package</li> </ol> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>install.packages("R2WinBUGS")
+</code></pre></div></div> <ol> <li>Run the above example by passing the same WinBUGs code directly into <code class="language-plaintext highlighter-rouge">R2WinBUGS</code> package:</li> </ol> <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">R2WinBUGS</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Create the model file</span><span class="w">
+</span><span class="n">cat</span><span class="p">(</span><span class="s2">"
+model {
+    for (j in 1:J) {
+        y[j] ~ dnorm(theta[j], tau.y[j])
+        theta[j] ~ dnorm(mu.theta, tau.theta)
+        tau.y[j] &lt;- 1 / (sigma.y[j] * sigma.y[j])
+    }
+
+    mu.theta ~ dnorm(0, 0.0001)
+    tau.theta ~ dgamma(0.01, 0.01)
+    sd.theta &lt;- 1 / sqrt(tau.theta)
+}
+"</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"8schools_model.txt"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">schools_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="w">
+  </span><span class="n">J</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w"> 
+  </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">28.39</span><span class="p">,</span><span class="w"> </span><span class="m">7.94</span><span class="p">,</span><span class="w"> </span><span class="m">-2.75</span><span class="p">,</span><span class="w"> </span><span class="m">6.82</span><span class="p">,</span><span class="w"> </span><span class="m">-0.64</span><span class="p">,</span><span class="w"> </span><span class="m">0.63</span><span class="p">,</span><span class="w"> </span><span class="m">18.01</span><span class="p">,</span><span class="w"> </span><span class="m">12.16</span><span class="p">),</span><span class="w"> 
+  </span><span class="n">sigma.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">14.9</span><span class="p">,</span><span class="w"> </span><span class="m">10.2</span><span class="p">,</span><span class="w"> </span><span class="m">16.3</span><span class="p">,</span><span class="w"> </span><span class="m">11.0</span><span class="p">,</span><span class="w"> </span><span class="m">9.4</span><span class="p">,</span><span class="w"> </span><span class="m">11.4</span><span class="p">,</span><span class="w"> </span><span class="m">10.4</span><span class="p">,</span><span class="w"> </span><span class="m">17.6</span><span class="p">)</span><span class="w">
+</span><span class="p">)</span><span class="w">
+
+</span><span class="n">schools_inits</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="k">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nf">list</span><span class="p">(</span><span class="n">mu.theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">tau.theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">))</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="n">params</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"mu.theta"</span><span class="p">,</span><span class="w"> </span><span class="s2">"sd.theta"</span><span class="p">,</span><span class="w"> </span><span class="s2">"theta"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">schools_sim</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">bugs</span><span class="p">(</span><span class="w">
+  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">schools_data</span><span class="p">,</span><span class="w">
+  </span><span class="n">inits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">schools_inits</span><span class="p">,</span><span class="w">
+  </span><span class="n">parameters.to.save</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">params</span><span class="p">,</span><span class="w">
+  </span><span class="n">model.file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"8schools_model.txt"</span><span class="p">,</span><span class="w">
+  </span><span class="n">n.chains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w">
+  </span><span class="n">n.iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5000</span><span class="p">,</span><span class="w">
+  </span><span class="n">n.burnin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000</span><span class="p">,</span><span class="w">
+  </span><span class="n">bugs.directory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"C:/Users/kevinyen/Downloads/winbugs143_unrestricted/winbugs14_full_patched/WinBUGS14"</span><span class="p">,</span><span class="w">
+  </span><span class="n">debug</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="w"> </span><span class="c1"># Set to TRUE to see the WinBUGS window and debug errors</span><span class="w">
+</span><span class="p">)</span><span class="w">
+
+</span><span class="n">print</span><span class="p">(</span><span class="n">schools_sim</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; print(schools_sim)
+Inference for Bugs model at "8schools_model.txt", fit using WinBUGS,
+ 4 chains, each with 2000 iterations (first 1000 discarded), n.thin = 4
+ n.sims = 1000 iterations saved
+         mean  sd 2.5%  25%  50%  75% 97.5% Rhat n.eff
+mu.theta  7.8 3.9  0.9  5.0  7.6 10.2  16.3  1.1    43
+sd.theta  1.8 2.4  0.1  0.3  0.9  2.2   8.6  1.0    79
+theta[1]  8.4 4.8  0.5  5.3  7.9 10.8  18.6  1.0    75
+theta[2]  7.8 4.4 -0.6  4.9  7.4 10.3  16.9  1.1    51
+theta[3]  7.4 4.5 -1.5  4.7  7.1 10.1  16.5  1.1    51
+theta[4]  7.7 4.4 -1.4  4.9  7.5 10.2  16.8  1.1    46
+theta[5]  7.3 4.5 -2.2  4.6  7.1  9.9  16.5  1.1    56
+theta[6]  7.4 4.3 -0.7  4.5  7.2 10.0  16.5  1.1    44
+theta[7]  8.2 4.7 -0.1  5.1  7.8 10.7  18.0  1.1    56
+theta[8]  7.9 4.7 -0.8  5.0  7.8 10.4  17.2  1.1    53
+deviance 60.3 1.5 58.2 59.5 59.9 60.6  64.1  1.0   910
+
+For each parameter, n.eff is a crude measure of effective sample size,
+and Rhat is the potential scale reduction factor (at convergence, Rhat=1).
+
+DIC info (using the rule, pD = Dbar-Dhat)
+pD = 1.2 and DIC = 61.5
+DIC is an estimate of expected predictive error (lower deviance is better).
+</code></pre></div></div> <h1 id="jags">JAGs</h1> <h2 id="install-jags-on-windows">Install JAGs on Windows</h2> <p><a href="https://sourceforge.net/projects/mcmc-jags/files/JAGS/4.x/Windows/" rel="external nofollow noopener" target="_blank">https://sourceforge.net/projects/mcmc-jags/files/JAGS/4.x/Windows/</a></p> <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">install.packages</span><span class="p">(</span><span class="s2">"rjags"</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">rjags</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div> <h2 id="install-jags-on-mac">Install JAGs on Mac</h2> <p>First install the JAGs</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>jags
+</code></pre></div></div> <p>Directly install in this way</p> <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">install.packages</span><span class="p">(</span><span class="s2">"rjags"</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"source"</span><span class="p">,</span><span class="w"> 
+                 </span><span class="n">configure.args</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"--with-jags-include=/opt/homebrew/include/JAGS --with-jags-lib=/opt/homebrew/lib"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div> <p>You should see these long messages since it directly install package directly by source build</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; install.packages("rjags", type = "source", 
++                  configure.args = "--with-jags-include=/opt/homebrew/include/JAGS --with-jags-lib=/opt/homebrew/lib")
+trying URL 'https://cran.rstudio.com/src/contrib/rjags_4-17.tar.gz'
+Content type 'application/x-gzip' length 76394 bytes (74 KB)
+==================================================
+downloaded 74 KB
+
+* installing *source* package ‘rjags’ ...
+** this is package ‘rjags’ version ‘4-17’
+** package ‘rjags’ successfully unpacked and MD5 sums checked
+** using staged installation
+configure: WARNING: unrecognized options: --with-jags-include, --with-jags-lib
+checking for pkg-config... no
+configure: Attempting legacy configuration of rjags
+checking for jags... /opt/homebrew/bin/jags
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C++... yes
+checking whether clang++ -arch arm64 -std=gnu++17 accepts -g... yes
+checking for clang++ -arch arm64 -std=gnu++17 option to enable C++11 features... none needed
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for Console.h... yes
+configure: Compile flags are -I/opt/homebrew/include/JAGS
+configure: Link flags are -L/opt/homebrew/lib -ljags
+checking for gcc... clang -arch arm64 -std=gnu2x
+checking whether the compiler supports GNU C... yes
+checking whether clang -arch arm64 -std=gnu2x accepts -g... yes
+checking for clang -arch arm64 -std=gnu2x option to enable C11 features... none needed
+checking for jags_version in -ljags... yes
+checking version of JAGS library... OK
+configure: creating ./config.status
+config.status: creating src/Makevars
+configure: WARNING: unrecognized options: --with-jags-include, --with-jags-lib
+configure: creating ./config.status
+config.status: creating src/Makevars
+config.status: creating R/unix/zzz.R
+configure: WARNING: unrecognized options: --with-jags-include, --with-jags-lib
+** libs
+using C compiler: ‘Apple clang version 21.0.0 (clang-2100.0.123.102)’
+using C++ compiler: ‘Apple clang version 21.0.0 (clang-2100.0.123.102)’
+using SDK: ‘MacOSX26.4.sdk’
+clang -arch arm64 -std=gnu2x -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG -I/opt/homebrew/include/JAGS   -I/opt/R/arm64/include    -fPIC  -falign-functions=64 -Wall -g -O2  -c init.c -o init.o
+clang++ -arch arm64 -std=gnu++17 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG -I/opt/homebrew/include/JAGS   -I/opt/R/arm64/include    -fPIC  -falign-functions=64 -Wall -g -O2   -c jags.cc -o jags.o
+clang++ -arch arm64 -std=gnu++17 -I"/Library/Frameworks/R.framework/Resources/include" -DNDEBUG -I/opt/homebrew/include/JAGS   -I/opt/R/arm64/include    -fPIC  -falign-functions=64 -Wall -g -O2   -c parallel.cc -o parallel.o
+clang++ -arch arm64 -std=gnu++17 -dynamiclib -Wl,-headerpad_max_install_names -undefined dynamic_lookup -L/Library/Frameworks/R.framework/Resources/lib -L/opt/R/arm64/lib -o rjags.so init.o jags.o parallel.o -L/opt/homebrew/lib -ljags -F/Library/Frameworks/R.framework/.. -framework R
+installing to /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/library/00LOCK-rjags/00new/rjags/libs
+** R
+** data
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rjags)
+
+The downloaded source packages are in
+    ‘/private/var/folders/3s/rg9c_f490gg1t18_0jftcw1m0000gn/T/RtmpN0lS1t/downloaded_packages’
+</code></pre></div></div> <p>In order to make sure what you do so far is correct, load the <code class="language-plaintext highlighter-rouge">rjags</code> library in R:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; library(rjags)
+Loading required package: coda
+Linked to JAGS 4.3.2
+Loaded modules: basemod,bugs
+</code></pre></div></div> <h3 id="bug-fix">Bug Fix</h3> <p>Issue comes when directly install rjags in this way</p> <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">install.packages</span><span class="p">(</span><span class="s2">"rjags"</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div> <p>Before fixing, need to remove the files installed before</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo rm</span> <span class="nt">-rf</span> /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/library/rjags
+</code></pre></div></div> <h2 id="demo">Demo</h2> <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">rjags</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Create the model file</span><span class="w">
+</span><span class="n">cat</span><span class="p">(</span><span class="s2">"
+model {
+    for (j in 1:J) {
+        y[j] ~ dnorm(theta[j], tau.y[j])
+        theta[j] ~ dnorm(mu.theta, tau.theta)
+        tau.y[j] &lt;- 1 / (sigma.y[j] * sigma.y[j])
+    }
+
+    mu.theta ~ dnorm(0, 0.0001)
+    tau.theta ~ dgamma(0.01, 0.01)
+    sd.theta &lt;- 1 / sqrt(tau.theta)
+}
+"</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"8schools_model.txt"</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Data</span><span class="w">
+</span><span class="n">jags_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="w">
+  </span><span class="n">J</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8</span><span class="p">,</span><span class="w">
+  </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">28.39</span><span class="p">,</span><span class="w"> </span><span class="m">7.94</span><span class="p">,</span><span class="w"> </span><span class="m">-2.75</span><span class="p">,</span><span class="w"> </span><span class="m">6.82</span><span class="p">,</span><span class="w"> </span><span class="m">-0.64</span><span class="p">,</span><span class="w"> </span><span class="m">0.63</span><span class="p">,</span><span class="w"> </span><span class="m">18.01</span><span class="p">,</span><span class="w"> </span><span class="m">12.16</span><span class="p">),</span><span class="w">
+  </span><span class="n">sigma.y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">14.9</span><span class="p">,</span><span class="w"> </span><span class="m">10.2</span><span class="p">,</span><span class="w"> </span><span class="m">16.3</span><span class="p">,</span><span class="w"> </span><span class="m">11.0</span><span class="p">,</span><span class="w"> </span><span class="m">9.4</span><span class="p">,</span><span class="w"> </span><span class="m">11.4</span><span class="p">,</span><span class="w"> </span><span class="m">10.4</span><span class="p">,</span><span class="w"> </span><span class="m">17.6</span><span class="p">)</span><span class="w">
+</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Initial Values</span><span class="w">
+</span><span class="n">jags_inits</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="w">
+  </span><span class="nf">list</span><span class="p">(</span><span class="n">mu.theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">tau.theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">)),</span><span class="w">
+  </span><span class="nf">list</span><span class="p">(</span><span class="n">mu.theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">tau.theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">theta</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">))</span><span class="w"> </span><span class="c1"># Chain 2</span><span class="w">
+</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Initialize / Compile the Model</span><span class="w">
+</span><span class="n">model_run</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">jags.model</span><span class="p">(</span><span class="w">
+  </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"8schools_model.txt"</span><span class="p">,</span><span class="w">
+  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jags_data</span><span class="p">,</span><span class="w">
+  </span><span class="n">inits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">jags_inits</span><span class="p">,</span><span class="w">
+  </span><span class="n">n.chains</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="w">
+</span><span class="p">)</span><span class="w">
+
+</span><span class="c1"># Update Model</span><span class="w">
+</span><span class="n">update</span><span class="p">(</span><span class="n">model_run</span><span class="p">,</span><span class="w"> </span><span class="n">n.iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1000</span><span class="p">)</span><span class="w">
+
+</span><span class="n">samples</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">coda.samples</span><span class="p">(</span><span class="w">
+  </span><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">model_run</span><span class="p">,</span><span class="w">
+  </span><span class="n">variable.names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"mu.theta"</span><span class="p">,</span><span class="w"> </span><span class="s2">"sd.theta"</span><span class="p">,</span><span class="w"> </span><span class="s2">"theta"</span><span class="p">),</span><span class="w">
+  </span><span class="n">n.iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5000</span><span class="w">
+</span><span class="p">)</span><span class="w">
+
+</span><span class="n">summary</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; summary(samples)
+Iterations = 1001:6000
+Thinning interval = 1 
+Number of chains = 2 
+Sample size per chain = 5000 
+
+1. Empirical mean and standard deviation for each variable,
+   plus standard error of the mean:
+
+          Mean    SD Naive SE Time-series SE
+mu.theta 8.452 4.397  0.04397         0.3167
+sd.theta 2.564 3.311  0.03311         0.1796
+theta[1] 9.476 5.711  0.05711         0.3442
+theta[2] 8.373 4.958  0.04958         0.3050
+theta[3] 7.963 5.513  0.05513         0.3141
+theta[4] 8.316 5.015  0.05015         0.3259
+theta[5] 7.550 5.111  0.05111         0.3191
+theta[6] 7.850 5.139  0.05139         0.3032
+theta[7] 9.305 5.172  0.05172         0.3274
+theta[8] 8.640 5.496  0.05496         0.3496
+
+2. Quantiles for each variable:
+
+              2.5%    25%   50%    75% 97.5%
+mu.theta  0.124808 5.2752 8.526 11.603 16.77
+sd.theta  0.097733 0.4243 1.280  3.372 11.96
+theta[1] -0.008631 5.5878 9.128 12.568 21.97
+theta[2] -1.455128 5.0925 8.459 11.668 17.48
+theta[3] -3.567675 4.7376 8.102 11.549 17.70
+theta[4] -1.616398 5.0578 8.388 11.645 17.73
+theta[5] -3.658888 4.4647 7.675 11.123 16.70
+theta[6] -2.798620 4.7096 7.965 11.394 17.13
+theta[7]  0.084474 5.6810 9.085 12.396 20.28
+theta[8] -1.669447 5.2056 8.614 11.960 19.09
+</code></pre></div></div> <div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plot</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/winbugs/unnamed-chunk-2-1-480.webp 480w,/assets/img/winbugs/unnamed-chunk-2-1-800.webp 800w,/assets/img/winbugs/unnamed-chunk-2-1-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/winbugs/unnamed-chunk-2-1.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/winbugs/unnamed-chunk-2-2-480.webp 480w,/assets/img/winbugs/unnamed-chunk-2-2-800.webp 800w,/assets/img/winbugs/unnamed-chunk-2-2-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/winbugs/unnamed-chunk-2-2.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/winbugs/unnamed-chunk-2-3-480.webp 480w,/assets/img/winbugs/unnamed-chunk-2-3-800.webp 800w,/assets/img/winbugs/unnamed-chunk-2-3-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/winbugs/unnamed-chunk-2-3.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/winbugs/unnamed-chunk-2-4-480.webp 480w,/assets/img/winbugs/unnamed-chunk-2-4-800.webp 800w,/assets/img/winbugs/unnamed-chunk-2-4-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/winbugs/unnamed-chunk-2-4.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"> </picture> </figure> </div> </div> </d-article> <d-appendix> <d-footnote-list></d-footnote-list> <d-citation-list></d-citation-list> </d-appendix> <d-bibliography src="/assets/bibliography/"></d-bibliography> <d-article> <h2 class="text-3xl font-semibold mb-4 mt-12">Enjoy Reading This Article?</h2> <p class="mb-2">Here are some more articles you might like to read next:</p> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2025/tables/">Causal Inference Notes</a> </li> <li class="my-2"> <a class="text-pink-700 underline font-semibold hover:text-pink-800" href="/blog/2023/tables/">Machine Learning and Language Modeling</a> </li> <br> <br> <div id="giscus_thread"> <script defer src="/assets/js/giscus-setup.js"></script> <noscript> Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" rel="external nofollow noopener" target="_blank">comments powered by giscus.</a> </noscript> </div> </d-article> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Jai-Hua (Kevin) Yen. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script src="/assets/js/distillpub/overrides.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/mermaid@10.7.0/dist/mermaid.min.js" integrity="sha256-TtLOdUA8mstPoO6sGvHIGx2ceXrrX4KgIItO06XOn8A=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js" integrity="sha256-1rA678n2xEx7x4cTZ5x4wpUCj6kUMZEZ5cxLSVSFWxw=" crossorigin="anonymous"></script> <script defer src="/assets/js/mermaid-setup.js?38ca0a0126f7328d2d9a46bad640931f" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.47/bundles/js/diff2html-ui.min.js" integrity="sha256-eU2TVHX633T1o/bTQp6iIJByYJEtZThhF9bKz/DcbbY=" crossorigin="anonymous"></script> <script defer src="/assets/js/diff2html-setup.js?80a6e52ce727518bbd3aed2bb6ba5601" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js" integrity="sha256-MgH13bFTTNqsnuEoqNPBLDaqxjGH+lCpqrukmXc8Ppg=" crossorigin="anonymous"></script> <script defer src="/assets/js/leaflet-setup.js?b6313931e203b924523e2d8b75fe8874" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha256-0q+JdOlScWOHcunpUk21uab1jW7C1deBQARHtKMcaB4=" crossorigin="anonymous"></script> <script defer src="/assets/js/chartjs-setup.js?183c5859923724fb1cb3c67593848e71" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js" integrity="sha256-QvgynZibb2U53SsVu98NggJXYqwRL7tg3FeyfXvPOUY=" crossorigin="anonymous"></script> <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/theme/dark-fresh-cut.js" integrity="sha256-sm6Ui9w41++ZCWmIWDLC18a6ki72FQpWDiYTDxEPXwU=" crossorigin="anonymous"></script> <script defer src="/assets/js/echarts-setup.js?738178999630746a8d0cfc261fc47c2c" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/vega@5.27.0/build/vega.min.js" integrity="sha256-Yot/cfgMMMpFwkp/5azR20Tfkt24PFqQ6IQS+80HIZs=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.3/build/vega-lite.min.js" integrity="sha256-TvBvIS5jUN4BSy009usRjNzjI1qRrHPYv7xVLJyjUyw=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/vega-embed@6.24.0/build/vega-embed.min.js" integrity="sha256-FPCJ9JYCC9AZSpvC/t/wHBX7ybueZhIqOMjpWqfl3DU=" crossorigin="anonymous"></script> <script defer src="/assets/js/vega-setup.js?7c7bee055efe9312afc861b128fe5f36" type="text/javascript"></script> <script defer src="https://tikzjax.com/v1/tikzjax.js" integrity="sha256-+1qyucCXRZJrCg3lm3KxRt/7WXaYhBid4/1XJRHGB1E=" crossorigin="anonymous"></script> <script src="/assets/js/typograms.js?062e75bede72543443762dc3fe36c7a5"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script> <script defer src="/assets/js/copy_code.js?c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script> <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/js/search/ninja-keys.min.js?a3446f084dcaecc5f75aa1757d087dcf"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/js/search-setup.js?6c304f7b1992d4b60f7a07956e52f04a"></script> <script src="/assets/js/search-data.js"></script> <script src="/assets/js/shortcut-key.js?6f508d74becd347268a7f822bca7309d"></script> </body> </html>
