@@ -24,7 +24,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi I am Jai-Hua (嘉華)! You can also called me Kevin. Welcome to my page!
+Hi I am Kevin! You can also called me Jai-Hua (嘉華). Welcome to my page!
 
 I am currently a second year Biostatistics Ph.D. Candidate at [University at Buffalo](https://www.buffalo.edu) working with [Dr. Douglas Landsittel](https://publichealth.buffalo.edu/biostatistics/faculty-and-staff/faculty-directory.host.html/content/shared/sphhp/biostatistics/profiles/faculty/landsittel--douglas.html). My current research interests include explainable and statistical machine learning, causal inference, and non-linear longitudinal data analysis.
 
