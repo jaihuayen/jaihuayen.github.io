@@ -57,7 +57,7 @@
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Statistical Machine Learning
+    - title: Explainable / Statistical Machine Learning
     - title: Computer Vision
-    - title: Explainable Machine Learning
     - title: Causal Inference
+    - title: Longitudinal Data Analysis
