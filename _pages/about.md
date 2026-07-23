@@ -26,7 +26,7 @@ latest_posts:
 
 Hi, I’m Kevin! You can also call me Jai-Hua (嘉華). Welcome to my page!
 
-I am a second-year Biostatistics Ph.D. candidate at the [University at Buffalo](https://www.buffalo.edu) working with [Dr. Douglas Landsittel](https://publichealth.buffalo.edu/biostatistics/faculty-and-staff/faculty-directory.host.html/content/shared/sphhp/biostatistics/profiles/faculty/landsittel--douglas.html). My current research interests include explainable and statistical machine learning on longitudinal data analysis, causal inference, and computer vision.
+I am a third-year Biostatistics Ph.D. candidate at the [University at Buffalo](https://www.buffalo.edu) working with [Dr. Douglas Landsittel](https://publichealth.buffalo.edu/biostatistics/faculty-and-staff/faculty-directory.host.html/content/shared/sphhp/biostatistics/profiles/faculty/landsittel--douglas.html). My research interests include statistical machine learning, longitudinal and functional data analysis, causal inference, and computer vision.
 
 Prior to my doctoral studies, I served as a Senior AI Software Engineer at [QNAP](https://www.qnap.com/en). There, I specialized in training computer vision models for image classification and Optical Character Recognition (OCR), deploying zero-shot vision-language models (like CLIP), and optimizing these models for edge AI runtimes.
 
