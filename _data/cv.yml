@@ -58,6 +58,6 @@
   type: nested_list
   contents:
     - title: Explainable / Statistical Machine Learning
-    - title: Computer Vision
+    - title: Computer Vision / Deep Learning
     - title: Causal Inference
-    - title: Longitudinal Data Analysis
+    - title: Longitudinal / Functional Data Analysis
