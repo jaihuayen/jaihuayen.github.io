@@ -98,7 +98,7 @@ ninja.data = [{
         title: 'LinkedIn',
         section: 'Socials',
         handler: () => {
-          window.open("https://www.linkedin.com/in/jai-hua-yen-ba455990", "_blank");
+          window.open("https://www.linkedin.com/in/kevin-yen-ba455990", "_blank");
         },
       },{
         id: 'social-scholar',
