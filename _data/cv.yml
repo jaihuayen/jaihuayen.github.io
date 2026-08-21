@@ -24,9 +24,13 @@
 - title: Academic Experience
   type: time_table
   contents:
+    - title: Graduate Assistant
+      institution: University at Buffalo, New York, USA
+      year: 2026.05 - Now
+
     - title: Teaching Assistant
       institution: University at Buffalo, New York, USA
-      year: 2024.08 - Now
+      year: 2024.08 - 2026.05
 
     - title: Teaching Assistant
       institution: National Taiwan University, Taipei, Taiwan
